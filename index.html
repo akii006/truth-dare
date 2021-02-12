@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth & dare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card w-50 m-auto text-center" style="border: 5px solid white; border-radius: 10px;">
+            <div class="card-header" style="background-color:black;color: white;font-weight: bolder; font-size: 50px; ">
+                TRUTH & DARE
+            </div>
+            <div class="card-body" style="background-color: dimgrey;">
+                <form class="form-inline w-75 m-auto">
+                    <div class="form-group">
+                        <input type="text" id="tplayer" class="form-control text-center"
+                            style="color:black; font-weight:bold; text-transform: uppercase; font-size : 20px"
+                            placeholder="ENTER TOTAL NUMBER OF PLAYER">
+                    </div>
+                </form>
+                    <br>
+                    <div class="m-auto w-100">
+                        <button class="btn w-50" style="background-color: slategrey; color: white; font-weight: bold;"
+                            onclick="answerlo()"> CLICK FOR SPIN THE BOTTEL</button>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="text" id="pnum" class="text-center"
+                            style="color:black; font-weight:bold; text-transform: uppercase; font-size : 20px"
+                            placeholder="PLAYER NO.">
+                    </div>
+                <br>
+                <br>
+                <div style="width: 100%; margin: auto;">
+                    <div class="w-50">
+                        <button class="btn w-50 "
+                            style="background-color: slategray; color: white;float: left; font-weight: bold; margin-left: 90px;"
+                            onclick="ttruth()"> TRUTH</button>
+                    </div>
+                    <div class="w-50 m-auto">
+                        <button class="btn w-50"
+                            style="background-color: slategray; color: white;float: right; font-weight: bold; margin-right: -90px;"
+                            onclick="tdare()"> DARE</button>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <textarea rows="5" cols="30" id="hello" style="color:black;font-size : 20px; text-transform: uppercase; font-weight:bold;"
+                        class="form-control text-center w-75 m-auto" placeholder="TASK FOR TRUTH &DARE"></textarea>
+                </div>
+            </div>
+
+            <div class="card-footer" style="background-color: black;color: white;font-weight: bolder;">
+                IF TASK ARE REPEAT THEN YOU WILL CHANGE IT :)
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function answerlo() {
+            if (document.getElementById('tplayer').value == "")
+                alert("Enter Total player :)");
+            else {
+                var num = 0;
+                var x=0;
+                var x = document.getElementById('tplayer').value;
+                num = Math.ceil((Math.random() * 100) % x);
+                document.getElementById('pnum').value = num;
+            }
+        }
+        function ttruth(){
+            if (document.getElementById('tplayer').value == "")
+                alert("Enter Total player :)");
+            else if (document.getElementById('pnum').value == "")
+                alert("Press the spin button");
+            else{
+                var num = 0;
+                num = Math.floor(Math.random() * 10);
+                if(num == 1)
+                document.getElementById('hello').value = "say your first girlfriend/boyfriend name?";
+                if(num == 2)
+                document.getElementById('hello').value = "say your left side girlfriend/boyfriend name?";
+                if(num == 3)
+                document.getElementById('hello').value = "say your right side girlfriend/boyfriend name?";
+                if(num == 4)
+                document.getElementById('hello').value = "say your one bad habbit?";
+                if(num == 5)
+                document.getElementById('hello').value = "say one bad habbit in your left side person?";
+                if(num == 6)
+                document.getElementById('hello').value = "say your first girlfriend/boyfriend name?";
+                if(num == 7)
+                document.getElementById('hello').value = "say your left side girlfriend/boyfriend name?";
+                if(num == 8)
+                document.getElementById('hello').value = "say your right side girlfriend/boyfriend name?";
+                if(num == 9)
+                document.getElementById('hello').value = "say your one bad habbit?";
+                if(num == 10)
+                document.getElementById('hello').value = "say one bad habbit in your left side person?";
+            }
+        }
+        
+        function tdare(){
+            if (document.getElementById('tplayer').value == "")
+                alert("Enter Total player :)");
+            else if (document.getElementById('pnum').value == "")
+                alert("Press the spin button");
+            else{
+                var num = 0;
+                num = Math.floor(Math.random() * 10);
+                if(num == 1)
+                document.getElementById('hello').value = "you will do dance";
+                if(num == 2)
+                document.getElementById('hello').value = "call any one and say  you love with him/her";
+                if(num == 3)
+                document.getElementById('hello').value = "put one ice-cube in your mouth for one minute";
+                if(num == 4)
+                document.getElementById('hello').value = "you do ten pu-shup";
+                if(num == 5)
+                document.getElementById('hello').value = "call your father and say  you love with anyone";
+                if(num == 6)
+                document.getElementById('hello').value = "you will do dance";
+                if(num == 7)
+                document.getElementById('hello').value = "call any one and say  you love with him/her";
+                if(num == 8)
+                document.getElementById('hello').value = "put one ice-cube in your mouth for one minute";
+                if(num == 9)
+                document.getElementById('hello').value = "you do ten pu-shup";
+                if(num == 10)
+                document.getElementById('hello').value = "call your father and say  you love with anyone";
+            }
+        }
+    </script>
+</body>
+
+</html>
